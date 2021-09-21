@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick e Morty</title>
+
+    <!-- estilo css -->
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+
+</head>
+<body>
+    
+    <header class="sidebar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="esconderMenu()">Personagens</a></li>
+                <li><a href="pesquisar.html" onclick="esconderMenu()">Pesquisar</a></li>
+                <li><a href="sortear.html" onclick="esconderMenu()">Sortear</a></li>
+                <li><a href="sobre.html" onclick="esconderMenu()">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <img src="img/arma-menu.png" class="toggle" onclick="menu()" alt="">
+
+        <section class="titulo">
+            <img src="img/titulo.png" alt="">
+            <p>Por meio do campo de pesquisa você poder seleciona um personagem da serie</p>
+        </section>
+
+        <section id="pesquisa">
+            <div class="celula-pesquisa">
+                <input type="search" name="" class="campo-pesquisa" placeholder="Exemplo Rick Sanchez" id="campo-pesquisa">
+                <button class="botao-pesquisa" onclick="pesquisar()">GO!</button>
+            </div>
+        </section>
+
+        <section class="grupo-card">
+
+            <!-- <div class="card cor-azul">
+                <div class="avatar">
+                    <img src="img/personagem-1.png" alt="">
+                </div>
+                <div class="conteudo-texto">
+                    <ul>
+                        <li>Rick Sanchez</li>
+                        <li>Alive</li>
+                        <li>Human</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card cor-amarelo">
+                <div class="avatar">
+                    <img src="img/personagem-2.png" alt="">
+                </div>
+                <div class="conteudo-texto">
+                    <ul>
+                        <li>Morty Smith</li>
+                        <li>Alive</li>
+                        <li>Human</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card cor-azul">
+                <div class="avatar">
+                    <img src="img/personagem-3.png" alt="">
+                </div>
+                <div class="conteudo-texto">
+                    <ul>
+                        <li>Summer Smith</li>
+                        <li>Alive</li>
+                        <li>Human</li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </section>
+
+        <section id="nao-encontrado">
+            <img src="img/erro.png" alt="">
+            <p>Nenhum Resultado Encontrado!</p>
+        </section>
+
+
+        <!-- <section class="paginacao">
+            <a class="voltar">
+                <img src="img/seta-anterior.svg" alt="">
+            </a>
+            <a class="numero">1</a>
+            <a class="proximo">
+                <img src="img/seta-proximo.svg" alt="">
+            </a>
+        </section> -->
+
+    </main>
+    
+
+    <!-- js  -->
+    <script src="js/main.js"></script>
+</body>
+</html>

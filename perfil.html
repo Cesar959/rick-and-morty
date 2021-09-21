@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick e Morty</title>
+
+    <!-- estilo css -->
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+
+</head>
+<body onload="perfil()">
+    
+    <header class="sidebar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="esconderMenu()">Personagens</a></li>
+                <li><a href="pesquisar.html" onclick="esconderMenu()">Pesquisar</a></li>
+                <li><a href="sortear.html" onclick="esconderMenu()">Sortear</a></li>
+                <li><a href="sobre.html" onclick="esconderMenu()">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <img src="img/arma-menu.png" class="toggle" onclick="menu()" alt="">
+
+        <div id="perfil">
+
+            <img src="" id="imagem-perfil" alt="">
+            <span class="status">Status: </span>
+
+            <section class="informacoes">
+                <h2>Informações</h2>
+                <p id="nome"></p>
+                <p id="especie"></p>
+                <p id="genero"></p>
+                <p id="personagemOrigem"></p>
+                <p id="personagemLocalizacao"></p>
+            </section>
+
+            <section class="origem">
+                <h2>Origem</h2>
+                <div class="faixa">
+                    <div class="coluna-origem">
+                        <img src="img/origem-perfil.png" alt="">
+                    </div>
+                    <div class="coluna-origem">
+                        <p id="nomeOrigem"></p>
+                        <p id="tipoOrigem"></p>
+                        <p id="dimensaoOrigem"></p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="localizacao">
+                <h2>Localização</h2>
+                <div class="faixa">
+                    <div class="coluna-localizacao" id="conteudo-localizacao">
+                        <p id="nomeLocalizacao">Nome:</p>
+                        <p id="tipoLocalizacao">Tipo:</p>
+                        <p id="dimensaoLocalizacao">Dimensão:</p>
+                    </div>
+                    <div class="coluna-localizacao" id="imagem-localizacao">
+                        <img src="img/localizacao-perfil.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <h2>Episodios</h2>
+            <section class="episodios">
+
+            </section>
+
+        </div>
+
+        <div class="carregamento">
+            <img src="img/carregamento.png" alt="">
+        </div>
+
+       
+        <a href="#" class="link-retorno tooltip">
+            <img src="img/rick-picks.png" alt="">
+            <span class="tooltiptext"> Olha Morty, sou um Picles, me use para voltar</span>
+        </a>
+
+    </main>
+    
+
+    <!-- js  -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick e Morty</title>
+
+    <!-- estilo css -->
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+
+</head>
+<body>
+    
+    <header class="sidebar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="esconderMenu()">Personagens</a></li>
+                <li><a href="pesquisar.html" onclick="esconderMenu()">Pesquisar</a></li>
+                <li><a href="sortear.html" onclick="esconderMenu()">Sortear</a></li>
+                <li><a href="sobre.html" onclick="esconderMenu()">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <img src="img/arma-menu.png" class="toggle" onclick="menu()" alt="">
+
+        <section class="titulo">
+            <img src="img/titulo.png" alt="">
+        </section>
+
+        <section id="texto-sobre">
+            <p>Seja bem-vindo! 
+                Ao projeto Rick and Morty, por meio do painel do projeto você pode conhecer os personagens acamados da famosa série.  Para o desenvolvimento desse projeto foi utilizado a The Rick and Morty API, uma API pública que retorna os dados dos personagens da série que devido a ela foi possível o desenvolvimento desse projeto. <br><br>
+                    A criação do Layout foi feita baseando-se na série, a ideia seria fazer referência a ela nas cores e alguns elementos posicionados na tela. Para o desenvolvimento da interface foi utilizado o Figma para isso.                
+               </p>
+               <img src="img/capa.png" alt="">
+        </section>
+
+    </main>
+    
+
+    <!-- js  -->
+    <script src="js/main.js"></script>
+</body>
+</html>
