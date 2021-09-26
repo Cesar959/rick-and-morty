@@ -242,12 +242,12 @@ function perfil()
             var dadosJsonObj = JSON.parse(ajax.responseText)
 
 
-             status.innerHTML = "Status: " + dadosJsonObj.status
+             status.innerHTML = "<span>Status:</span>  " + dadosJsonObj.status
              imagemPerfil.src =  dadosJsonObj.image
              imagemPerfil.alt =  dadosJsonObj.name
-             nome.innerHTML = "Nome: " + dadosJsonObj.name
-             especie.innerHTML = "Especie: " + dadosJsonObj.species
-             genero.innerHTML = "Genero: " + dadosJsonObj.gender
+             nome.innerHTML = "<span>Nome:</span> " + dadosJsonObj.name
+             especie.innerHTML = "<span>Especie:</span>  " + dadosJsonObj.species
+             genero.innerHTML = "<span>Genero:</span>  " + dadosJsonObj.gender
 
              
             var arrayEpisodio = dadosJsonObj.episode
@@ -328,7 +328,7 @@ function setCartao (personagem, corCartao, grupoCard, caminho)
     
     var linkPerfil = document.createElement('a')
     linkPerfil.classList.add('botao-perfil')
-    linkPerfil.href = "perfil.html?page=" + pagina + "&id=" + personagem.id + caminho
+    linkPerfil.href = "perfil.html?id=" + personagem.id + caminho
 
 
     var card = document.createElement('div')
@@ -388,9 +388,9 @@ function  getOrigem(url)
             {
                 var dadosJsonObjOrigem = JSON.parse(ajax.responseText)
 
-                nomeOrigem.innerHTML = "Nome: " + dadosJsonObjOrigem.name
-                tipoOrigem.innerHTML  = "Tipo: " + dadosJsonObjOrigem.type
-                dimensaoOrigem.innerHTML  = "Dimensão: " + dadosJsonObjOrigem.dimension
+                nomeOrigem.innerHTML = "<span>Nome:</span>  " + dadosJsonObjOrigem.name
+                tipoOrigem.innerHTML  = "<span>Tipo:</span>  " + dadosJsonObjOrigem.type
+                dimensaoOrigem.innerHTML  = "<span>Dimensão:</span>  " + dadosJsonObjOrigem.dimension
 
             }
 
@@ -400,9 +400,9 @@ function  getOrigem(url)
     }
     else
     {
-        nomeOrigem.innerHTML = "Nome: Desconhecido" 
-        tipoOrigem.innerHTML  = "Tipo: Desconhecido" 
-        dimensaoOrigem.innerHTML  = "Dimensão: Desconhecido"
+        nomeOrigem.innerHTML = "<span>Nome:</span>  Desconhecido" 
+        tipoOrigem.innerHTML  = "<span>Tipo:</span>  Desconhecido" 
+        dimensaoOrigem.innerHTML  = "<span>Dimensão:</span>  Desconhecido"
     }
 }
 
@@ -426,9 +426,9 @@ function  getLocalizacao(url)
                 var dadosJsonObjLocalizacao = JSON.parse(ajax.responseText)
     
     
-                nomeLocalizacao.innerHTML = "Nome: " + dadosJsonObjLocalizacao.name
-                tipoLocalizacao.innerHTML  = "Tipo: " + dadosJsonObjLocalizacao.type
-                dimensaoLocalizacao.innerHTML  = "Dimensão: " + dadosJsonObjLocalizacao.dimension
+                nomeLocalizacao.innerHTML = "<span>Nome:</span> " + dadosJsonObjLocalizacao.name
+                tipoLocalizacao.innerHTML  = "<span>Tipo:</span> " + dadosJsonObjLocalizacao.type
+                dimensaoLocalizacao.innerHTML  = "<span>Dimensão:</span> " + dadosJsonObjLocalizacao.dimension
     
     
     
@@ -440,9 +440,9 @@ function  getLocalizacao(url)
     }
     else
     {
-        nomeOrigem.innerHTML = "Nome: Desconhecido" 
-        tipoOrigem.innerHTML  = "Tipo: Desconhecido" 
-        dimensaoOrigem.innerHTML  = "Dimensão: Desconhecido"
+        nomeOrigem.innerHTML = "<span>Nome:</span>  Desconhecido" 
+        tipoOrigem.innerHTML  = "<span>Tipo:</span>  Desconhecido" 
+        dimensaoOrigem.innerHTML  = "<span>Dimensão:</span>  Desconhecido"
     }
   
 }
@@ -502,12 +502,11 @@ function getParametrosUrl()
     var url = window.location.href
     var separacaoParametro = url.split('?')
     var separacaoParametroAgregado = separacaoParametro[1].split('&')
-    var parametroPagina = separacaoParametroAgregado[0]
-    var parametroID = separacaoParametroAgregado[1]
-    var paginaRetorno = separacaoParametroAgregado[2]
+    var parametroID = separacaoParametroAgregado[0]
+    var paginaRetorno = separacaoParametroAgregado[1]
 
 
-    botaoRetorno.setAttribute("href", paginaRetorno + "?" + parametroPagina)
+    botaoRetorno.setAttribute("href", paginaRetorno)
 
     idPerfil = parametroID.substr(3,5)
 

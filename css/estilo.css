@@ -146,6 +146,7 @@ body
     margin-left: 300px;
     min-height: 100vh;
     transition: 0.5s;
+    overflow: hidden;
 }
 
 .conteudo .toggle
@@ -456,7 +457,16 @@ body
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     line-height: 60px;
-    font-size: 35px;
+    font-size: 30px;
+    color: #2C8A9E;
+}
+
+#perfil span
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 28px;
     color: #2C8A9E;
 }
 
@@ -495,7 +505,7 @@ body
 {
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     background: rgba(72, 123, 0, 0.3);
     width: 100%;
@@ -507,7 +517,17 @@ body
 {
     display: inline-block;
     width: 49%;
-    text-align: center;
+    text-align: left;
+}
+
+#perfil .coluna-origem img
+{
+    width: 80%;
+}
+
+#perfil .coluna-origem#conteudo-origem
+{
+    text-align: left;
 }
 
 #perfil .coluna-origem p
@@ -517,6 +537,15 @@ body
     font-size: 24px;
     line-height: 50px;
     color: #DFD862;
+}
+
+#perfil .coluna-origem span
+{
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    color: #2C8A9E;
 }
 
 #perfil .localizacao
@@ -543,6 +572,16 @@ body
     text-align: center;
 }
 
+#perfil .coluna-localizacao#conteudo-localizacao
+{
+    text-align: left;
+}
+
+#perfil .coluna-localizacao img
+{
+    width: 50%;
+}
+
 #perfil .coluna-localizacao p
 {
     font-family: 'Roboto';
@@ -551,6 +590,16 @@ body
     line-height: 50px;
     color: #DFD862;
 }
+
+#perfil .coluna-localizacao span
+{
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    color: #2C8A9E;
+}
+
 
 #perfil .episodios
 {
@@ -765,20 +814,19 @@ body
     {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
 
     #perfil .coluna-origem 
     {
         width: 100%;
         text-align: center;
-        padding: 20px;
     }
 
     #perfil .coluna-localizacao 
     {
         width: 100%;
         text-align: center;
-        padding: 20px;
     }
 
     #conteudo-localizacao
@@ -881,6 +929,21 @@ body
         font-size: 22px;
     }
 
+    #perfil .coluna-origem span 
+    {
+        font-size: 22px;
+    }
+
+    #perfil .coluna-localizacao span
+    {
+        font-size: 22px;
+    }
+
+    #perfil span 
+    {
+        font-size: 22px;
+    }
+
     #perfil .informacoes p 
     {
         font-size: 22px;
@@ -924,12 +987,17 @@ body
 
     #perfil .localizacao img
     {
-        width: 100%;
+        width: 90%;
     }
 
     .link-retorno img 
     {
         width: 60px;
+    }
+
+    #perfil .episodios .card-epi 
+    {
+        margin: 10px;
     }
 
 }
