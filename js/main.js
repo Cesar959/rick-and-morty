@@ -26,6 +26,7 @@ function esconderMenu()
 
 // funções principais
 
+// Função responsavel por trazer as informações dos personagens
 function personagens()
 {
     var paginacao = document.querySelector('.paginacao')
@@ -77,7 +78,7 @@ function personagens()
     ajax.send()
 }
 
-
+// Função responsavel por pesquisar 
 function pesquisar()
 {
     var parametroPesquisa = document.getElementById('campo-pesquisa').value
@@ -133,11 +134,14 @@ function pesquisar()
     ajax.send()
 }
 
-
+// Função responsavel por sortear 
 function sortear()
 {
     var parametroSorteio = Math.floor(Math.random() * 671 + 1)
     var grupoCard = document.querySelector('.grupo-card')
+    var botaoSortear = document.querySelector('.botao-sorteio')
+
+    botaoSortear.setAttribute("disabled", "disabled")
 
     grupoCard.innerHTML = ""
 
@@ -166,45 +170,10 @@ function sortear()
             }
 
 
-                // var linkPerfil = document.createElement('a')
-                // linkPerfil.classList.add('botao-perfil')
-                // linkPerfil.href = "perfil.html?pagina=0&id=" + dadosJsonObj.id + "&sortear.html"
-
-
-                // var card = document.createElement('div')
-                // card.classList.add('card')
-                // card.classList.add(corCartao)
-    
-    
-                // var avatar = document.createElement('div')
-                // avatar.classList.add('avatar')
-    
-    
-                // var imgAvatar = document.createElement('img')
-                // imgAvatar.src = dadosJsonObj.image
-                // imgAvatar.alt = dadosJsonObj.name
-                // linkPerfil.appendChild(imgAvatar)
-    
-    
-                // var conteudoCard = document.createElement('div')
-                // conteudoCard.classList.add('conteudo-texto')
-    
-    
-                // conteudoCard.innerHTML = 
-                // `<ul>
-                // <li>${ dadosJsonObj.name }</li>
-                // <li>${ dadosJsonObj.status}</li>
-                // <li>${ dadosJsonObj.species}</li>
-                // </ul>`
-    
-    
-    
-                // grupoCard.appendChild(card)
-                // card.appendChild(avatar)
-                // avatar.appendChild(linkPerfil)
-                // card.appendChild(conteudoCard)
-
             setCartao(dadosJsonObj, corCartao, grupoCard, "&sortear.html")
+
+            
+            botaoSortear.removeAttribute("disabled")
 
         }
     }
@@ -212,11 +181,12 @@ function sortear()
     ajax.send()
 }
 
-
+//  Função responsavel por trazer as informações do personagen na pagina de perfil  
 function perfil()
 {
     var carregamento = document.querySelector('.carregamento')
     var perfil = document.querySelector('#perfil')
+    var botaoVoltar = document.querySelector('.link-retorno')
 
     carregamento.style.display = "flex"
 
@@ -266,55 +236,13 @@ function perfil()
     }
 
     ajax.send()
+
+    botaoVoltar.style.display="inline-block"
 }
 
 
 
-// Construtores
-
-function setPaginacao() 
-{
-    var url = document.location.href.split('?')
-    var urlSeparacao = url.splice('?')
-    var parametro = urlSeparacao[1]
-
-
-    if(parametro == undefined)
-    {
-        link = "https://rickandmortyapi.com/api/character"
-        pagina = 1 
-    }
-    else
-    {
-        link = "https://rickandmortyapi.com/api/character?" + parametro
-        pagina = parseInt(parametro.substr(5,2)) 
-    }
-
-    var paginaVoltar = document.querySelector(".voltar")
-    var paginaProximo = document.querySelector(".proximo")
-    var numeroPagina = document.querySelector('.numero')
-
-
-    if (pagina == 1) {
-        paginaVoltar.setAttribute('href', 'index.html?page=' + 1)
-    } else {
-        paginaVoltar.setAttribute('href', 'index.html?page=' + (pagina - 1))
-    }
-
-    if (pagina == 34) 
-    {
-        paginaProximo.setAttribute('href', 'index.html?page=' + 34)
-        console.log('index.html?page=' + 34)
-    } else 
-    {
-        paginaProximo.setAttribute('href', 'index.html?page=' + (pagina + 1) )
-    }
-
-
-    numeroPagina.innerHTML= pagina + "/34"
-
-}
-
+// Criação do cartão do personagem
 function setCartao (personagem, corCartao, grupoCard, caminho)
 {
     if(pagina)
@@ -368,8 +296,7 @@ function setCartao (personagem, corCartao, grupoCard, caminho)
 }
 
 
-// Funções segundarias
-
+// Função responsavel por criar a seção Origem
 function  getOrigem(url)
 {
     var nomeOrigem = document.getElementById('nomeOrigem')
@@ -406,6 +333,7 @@ function  getOrigem(url)
     }
 }
 
+// Função responsavel por criar a seção Localização
 function  getLocalizacao(url)
 {
     
@@ -447,6 +375,7 @@ function  getLocalizacao(url)
   
 }
 
+// Função responsavel por exibir os cads de episodios do perfil
 function  getEpisodio(array)
 {
     var secaoEpisodio = document.querySelector(".episodios")
@@ -495,6 +424,11 @@ function  getEpisodio(array)
 
 }
 
+
+
+// PAGINAÇÃO 
+
+// Responsavel por pegar os parametros por url
 function getParametrosUrl() 
 {
     var botaoRetorno = document.querySelector('.link-retorno')
@@ -509,5 +443,49 @@ function getParametrosUrl()
     botaoRetorno.setAttribute("href", paginaRetorno)
 
     idPerfil = parametroID.substr(3,5)
+
+}
+
+// Responsavel por criar apaginação
+function setPaginacao() 
+{
+    var url = document.location.href.split('?')
+    var urlSeparacao = url.splice('?')
+    var parametro = urlSeparacao[1]
+
+
+    if(parametro == undefined)
+    {
+        link = "https://rickandmortyapi.com/api/character"
+        pagina = 1 
+    }
+    else
+    {
+        link = "https://rickandmortyapi.com/api/character?" + parametro
+        pagina = parseInt(parametro.substr(5,2)) 
+    }
+
+    var paginaVoltar = document.querySelector(".voltar")
+    var paginaProximo = document.querySelector(".proximo")
+    var numeroPagina = document.querySelector('.numero')
+
+
+    if (pagina == 1) {
+        paginaVoltar.setAttribute('href', 'index.html?page=' + 1)
+    } else {
+        paginaVoltar.setAttribute('href', 'index.html?page=' + (pagina - 1))
+    }
+
+    if (pagina == 34) 
+    {
+        paginaProximo.setAttribute('href', 'index.html?page=' + 34)
+        console.log('index.html?page=' + 34)
+    } else 
+    {
+        paginaProximo.setAttribute('href', 'index.html?page=' + (pagina + 1) )
+    }
+
+
+    numeroPagina.innerHTML= pagina + "/34"
 
 }

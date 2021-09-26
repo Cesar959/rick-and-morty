@@ -39,6 +39,7 @@ body
     bottom: 100px;
     right: 30px;
     color: #2C8A9E;
+    display: none;
 }
 
 .link-retorno img
@@ -46,11 +47,6 @@ body
     width: 75px;
 }
 
-.tooltip 
-{
-    display: inline-block;
-}
-  
 .tooltip .tooltiptext 
 {
     visibility: hidden;
@@ -412,6 +408,16 @@ body
 #descricao-sortear .botao-sorteio:hover
 {
     box-shadow: 5px 8px 10px black;
+}
+
+#descricao-sortear .botao-sorteio:disabled
+{
+    background: #a34141;
+}
+
+#descricao-sortear .botao-sorteio:enabled
+{
+    background: #E43131;
 }
 
 #texto-sobre 
