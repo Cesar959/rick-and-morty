@@ -12,7 +12,7 @@ Projeto desenvolvido utilizando The Rick and Morty API dos desenvolvedores [Axel
 Rick and Morty é uma série de animação adulta norte-americana de comédia e ficção científica criada por Justin Roiland e Dan Harmon,
 Utilizando o figma foi criado o layout do projeto besando-se em elementos evidentes da serie, A ideia e passa referencia encontradas no desenho para o projeto por exemplo o botão menu que esta sendo representado pela arma de portais de um dos personagens principais e alem de outras referencia ao mundo ficticio da animação.
 
-### Status do Projeto
+## Status do Projeto
 
 **Em Andamento**: O projeto não esta terminado ainda, havera futuras alterações de funcionalidade e responsividade que acontecera em breve.
 
